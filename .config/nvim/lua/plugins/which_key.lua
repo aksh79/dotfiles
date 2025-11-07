@@ -3,8 +3,13 @@ return {
   event = "VeryLazy",
   opts = {
       win = {
-          border = "rounded"
-      }
+          no_overlap = false
+      },
+      keys = {
+          scroll_up = "<C-k>",
+          scroll_down = "<C-j>"
+      },
+      preset = "helix"
   },
   keys = {
     {

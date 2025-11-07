@@ -8,8 +8,7 @@ args = ["-u"]
 padding = { x = 15, y = 15}
 decorations = "None"
 startup_mode = "Maximized"
-blur = true
-# opacity = 0.9
+blur = false
 opacity = 1
 
 [scrolling]

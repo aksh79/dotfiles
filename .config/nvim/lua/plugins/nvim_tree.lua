@@ -13,6 +13,17 @@ local function open_win_config_func()
     }
 end
 
+local function custom_mappings(bufnr)
+    local api = require('nvim-tree.api')
+    local function opts(desc)
+      return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    api.config.mappings.default_on_attach(bufnr)
+    vim.keymap.set("n", "<Esc>", api.tree.close, opts("Close"))
+end
+
+
 return {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
@@ -20,6 +31,7 @@ return {
     },
     config = function()
         require("nvim-tree").setup({
+            on_attach = custom_mappings,
             view = {
                 signcolumn = "yes",
                 float = {

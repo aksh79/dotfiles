@@ -35,4 +35,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 vim.g.moonflyTransparent = true
 vim.cmd("colorscheme moonfly")
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+-- bg color overrides to make stuff transparent
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
+
+
+-- custome keymaps
+require("config.keymaps")
