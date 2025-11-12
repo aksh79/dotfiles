@@ -1,6 +1,6 @@
 return {
     "neovim/nvim-lspconfig",
-    config = function ()
+    config = function()
         local on_attach = function(_, bufnr)
             local nmap = function(keys, func, desc)
                 if desc then
@@ -33,14 +33,14 @@ return {
             end, '[W]orkspace [L]ist Folders')
 
             -- Inlay hints
-            nmap('<leader>ih', function ()
-                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}),{0})
+            nmap('<leader>ih', function()
+                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
             end, 'Enable [I]nlay [H]ints')
 
 
 
-        -- Create a command `:Format` local to the LSP buffer
-        vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+            -- Create a command `:Format` local to the LSP buffer
+            vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
                 vim.lsp.buf.format()
             end, { desc = 'Format current buffer with LSP' })
         end
