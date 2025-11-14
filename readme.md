@@ -1,10 +1,8 @@
 # dotfiles
 dotfiles for things i use:
-- kitty
 - alacritty
 - tmux
 - neovim
-- zed
 - zsh
 
 ```bash
